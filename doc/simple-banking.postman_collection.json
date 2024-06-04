@@ -1,0 +1,223 @@
+{
+	"info": {
+		"_postman_id": "432e0a21-6488-4489-9d20-19459b307646",
+		"name": "simple-banking",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "693197",
+		"_collection_link": "https://fdasdfsa.postman.co/workspace/Demo~76a01f1c-6a0b-45ed-8844-f5af93a5cf97/collection/693197-432e0a21-6488-4489-9d20-19459b307646?action=share&source=collection_link&creator=693197"
+	},
+	"item": [
+		{
+			"name": "auth",
+			"item": [
+				{
+					"name": "Signup",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"firstName\" : \"Vinra\",\n    \"lastName\" : \"Pandia\",\n    \"email\" :\"email1@gmail.com\",\n    \"password\" : \"secret\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/api/v1/auth/signup",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"auth",
+								"signup"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "login",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer s",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\" :\"email1@gmail.com\",\n    \"password\" : \"secret\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/api/v1/auth/login",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "account",
+			"item": [
+				{
+					"name": "account-balance",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJwYW5kaWF2aW5yYUBnbWFpbC5jb20iLCJpYXQiOjE3MTc0ODgwNTQsImV4cCI6MTcxNzQ5NjY5NH0.dgXjCb9k2YxhyaKcLWGjVisf_TXz31HyhgxDZK3rtMccsi1Tmb816LFTrsGhn31T-zH5idRsCVe4o-xplOTGsA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer s",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"url": {
+							"raw": "localhost:8080/api/v1/account/balance",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"account",
+								"balance"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "account-transaction - withdraw",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJwYW5kaWF2aW5yYUBnbWFpbC5jb20iLCJpYXQiOjE3MTc0ODgwNTQsImV4cCI6MTcxNzQ5NjY5NH0.dgXjCb9k2YxhyaKcLWGjVisf_TXz31HyhgxDZK3rtMccsi1Tmb816LFTrsGhn31T-zH5idRsCVe4o-xplOTGsA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer s",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"transactionType\" : \"WITHDRAW\",\n    \"amount\" : \"150\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/api/v1/account/transaction",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"account",
+								"transaction"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "account-transaction - deposit",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJwYW5kaWF2aW5yYUBnbWFpbC5jb20iLCJpYXQiOjE3MTc0ODgwNTQsImV4cCI6MTcxNzQ5NjY5NH0.dgXjCb9k2YxhyaKcLWGjVisf_TXz31HyhgxDZK3rtMccsi1Tmb816LFTrsGhn31T-zH5idRsCVe4o-xplOTGsA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer s",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"transactionType\" : \"DEPOSIT\",\n    \"amount\" : \"40000\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/api/v1/account/transaction",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"account",
+								"transaction"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

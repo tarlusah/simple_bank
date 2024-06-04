@@ -1,0 +1,26 @@
+spring:
+  application:
+    name: simple-banking
+  datasource:
+    url: jdbc:postgresql://localhost:5432/simple_banking
+    username: secret
+    password: secret
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: false
+    properties:
+      hibernate:
+        format_sql: true
+        dialect:
+    database: postgresql
+    open-in-view: true
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+
+app:
+  config:
+    jwt:
+      secret-key: rrooA0uxdSbbZPOaLBqb8k91iG9LVrGyrrooA0uxdSbbZPOaLBqb8k91iG9LVrGyrrooA0uxdSbbZPOaLBqb8k91iG9LVrGy
+      expiration-ms: 8640000
+
